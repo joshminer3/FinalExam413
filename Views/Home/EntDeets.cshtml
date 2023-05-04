@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Details";
+
+}
+
+
+@model Entertainers
+
+
+<h1>Info for @Model.EntStageName</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Stage Name</th>
+            <th>SSN</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Email</th>
+            <th>Date Entered</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.EntStageName</td>
+            <td>@Model.EntSsn</td>
+            <td>@Model.EntStreetAddress</td>
+            <td>@Model.EntCity</td>
+            <td>@Model.EntState</td>
+            <td>@Model.EntZipCode</td>
+            <td>@Model.EntPhoneNumber</td>
+            <td>@Model.EntWebPage</td>
+            <td>@Model.EntEmailAddress</td>
+            <td>@Model.DateEntered</td>
+
+            <td><a asp-controller="Home" asp-action="EntEdit" asp-route-Id="@Model.EntertainerId">Edit</a></td>
+            <td><a asp-controller="Home" asp-action="EntDelete" asp-route-Id="@Model.EntertainerId">Delete</a></td>
+
+        </tr>
+    </tbody>
+</table>
+
+

@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+
+}
+
+
+@model Final.Models.Entertainers
+
+<h1>Delete Confirmation</h1>
+<br />
+<h3>Delete Record For: @Model.EntStageName?</h3>
+
+<form method="post" asp-controller="Home" asp-action="EntDelete">
+
+    <button type="submit" class="btn btn-danger">DELETE</button>
+
+    <br />
+    <a asp-controller="Home" asp-action="EntClub" class="btn btn-light">Cancel</a>
+
+    <input type="hidden" asp-for="EntertainerId" />
+</form>

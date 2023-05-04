@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Add";
+
+}
+
+
+@model List<Entertainers>
+
+<div>
+    <h1>View All Entertainers</h1>
+</div>
+
+<table class="table table-bordered table-striped">
+
+    <thead class="font-weight-bold">
+        <tr>
+            <td>Stage Name</td>
+            <td>Details</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.EntStageName</td>
+
+
+                <td><a asp-controller="Home" asp-action="EntDeets" asp-route-Id="@x.EntertainerId">Details</a></td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<br />
+
+<a asp-controller="Home" asp-action="AddEnt" class="btn btn-primary btn-outline-primary">Add Entertainer</a>
